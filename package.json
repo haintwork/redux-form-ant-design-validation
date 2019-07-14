@@ -1,0 +1,28 @@
+{
+  "name": "redux-form-antd",
+  "version": "0.0.0",
+  "description": "An example shows how to combine redux-form with antd.",
+  "keywords": [
+    "antd",
+    "redux-form"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "antd": "3.4.3",
+    "react": "16.3.2",
+    "react-dom": "16.3.2",
+    "react-redux": "5.0.4",
+    "redux": "3.6.0",
+    "redux-form": "6.6.3",
+    "redux-form-website-template": "0.0.41"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
