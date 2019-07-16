@@ -2,6 +2,8 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 import { Form, Input, Radio, Select, Checkbox, Button, DatePicker } from "antd";
 
+import { makeField } from './helpers/make-field'
+
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
 const { Option } = Select;
@@ -30,21 +32,6 @@ const tailFormItemLayout = {
       offset: 6
     }
   }
-};
-
-export const makeField = Component => ({ input, meta, children, hasFeedback, label, ...rest }) => {
-  const hasError = meta.touched && meta.invalid;
-  return (
-    <FormItem
-      // {...formItemLayout}
-      label={label}
-      validateStatus={hasError ? "error" : "success"}
-      hasFeedback={hasFeedback && hasError}
-      help={hasError && meta.error}
-    >
-      <Component {...input} {...rest} children={children} />
-    </FormItem>
-  );
 };
 
 const AInput = makeField(Input);

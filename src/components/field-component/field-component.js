@@ -4,27 +4,20 @@ import { Input } from 'antd'
 import { compose } from 'redux'
 import { connect } from 'react-redux'
 
-import { requiredField } from '../../helpers/form-validate'
-import { makeField } from '../../SimpleForm'
+import { makeField } from '../../helpers/make-field'
 
 const AInput = makeField(Input)
 
-const validations = {
-  comment: [
-    requiredField('Comment')
-  ],
-}
-
 class FieldComponent extends Component {
   render() {
-    const { name, label, form } = this.props
+    const { name, label, customValidations } = this.props
     return (
       <div>
         <Field
           name={name}
           label={label}
           component={AInput}
-          validate={validations.comment}
+          validate={customValidations[name]}
         />
       </div>
     )
@@ -42,5 +35,3 @@ export default compose(
   reduxForm({
   })
 )(FieldComponent)
-
-// export default FieldComponent
