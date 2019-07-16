@@ -32,7 +32,7 @@ const tailFormItemLayout = {
   }
 };
 
-const makeField = Component => ({ input, meta, children, hasFeedback, label, ...rest }) => {
+export const makeField = Component => ({ input, meta, children, hasFeedback, label, ...rest }) => {
   const hasError = meta.touched && meta.invalid;
   return (
     <FormItem

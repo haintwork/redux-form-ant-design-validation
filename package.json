@@ -14,7 +14,8 @@
     "react-redux": "5.0.4",
     "redux": "3.6.0",
     "redux-form": "6.6.3",
-    "redux-form-website-template": "0.0.41"
+    "redux-form-website-template": "0.0.41",
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
     "react-scripts": "1.0.0"
