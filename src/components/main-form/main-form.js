@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Input, Button } from 'antd'
 import { Field, reduxForm } from 'redux-form'
 
-import { requiredField, maximumChars } from '../../helpers/form-validate'
+import { requiredField, maximumChars, bulkValidate } from '../../helpers/form-validate'
 import { makeField } from '../../helpers/make-field'
 import FieldComponent from '../field-component/field-component'
 
@@ -20,6 +20,8 @@ const validations = {
   ],
 }
 
+const validate = (values) => bulkValidate(validations, values)
+
 const submit = (values, props) => {
   // submit logic here
 }
@@ -36,13 +38,11 @@ class MainForm extends Component {
           name="email"
           label="Email"
           component={AInput}
-          validate={validations.email}
         />
         <FieldComponent
           name="comment"
           label="Comment"
           formName={form}
-          customValidations={validations}
         />
         <Button
           type="primary"
@@ -56,4 +56,5 @@ class MainForm extends Component {
 
 export default reduxForm({
   form: form,
+  validate
 })(MainForm)

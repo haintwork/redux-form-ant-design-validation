@@ -10,14 +10,13 @@ const AInput = makeField(Input)
 
 class FieldComponent extends Component {
   render() {
-    const { name, label, customValidations } = this.props
+    const { name, label } = this.props
     return (
       <div>
         <Field
           name={name}
           label={label}
           component={AInput}
-          validate={customValidations[name]}
         />
       </div>
     )
@@ -27,6 +26,7 @@ class FieldComponent extends Component {
 const mapStateToProps = (state, props) => {
   return {
     form: props.formName,
+    validate: props.customValidations,
   }
 }
 
